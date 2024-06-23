@@ -1,9 +1,19 @@
+import { NeonClient} from 'neon-sdk';
 import postgres from 'postgres';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
+let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID, TOKEN } = process.env;
+
+const neonClient = new NeonClient({
+    TOKEN: TOKEN
+});
+(async () => {
+    const projects =await neonClient.project.listProjects();
+    console.log(projects);
+})();
+
 
 const sql = postgres({
     host: PGHOST,
