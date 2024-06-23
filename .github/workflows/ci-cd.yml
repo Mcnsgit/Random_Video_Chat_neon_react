@@ -47,10 +47,10 @@ jobs:
     - name: Create Neon Branch
       uses: neondatabase/create-branch-action@v5
       with:
-        project_id: rapid-haze-373089
+        project_id: ep-white-silence-a2se0qtm-pooler
         parent: main
-        database: t3-db
-        branch_name: dev-branch
+        database: random-video-chat-match
+        branch_name: random-video-chat
         username: t3-db_owner
         api_key: ${{ secrets.NEON_API_KEY }}
 
@@ -60,6 +60,6 @@ jobs:
     - name: Delete Neon Branch
       uses: neondatabase/delete-branch-action@v3
       with:
-        project_id: rapid-haze-373089
-        branch: feature-branch
+        project_id: ep-white-silence-a2se0qtm-pooler
+        branch: random-video-chat
         api_key: ${{ secrets.NEON_API_KEY }}
